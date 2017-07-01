@@ -20,7 +20,7 @@ namespace Lanayo.Vagrant_Manager {
             Mutex mutex = new System.Threading.Mutex(true, appGuid, out OK);
 
             if (!OK) {
-                MessageBox.Show("Another instance of Vagrant Manager is already running");
+                MessageBox.Show("Vagrant Manager 的另一个实例已经在运行");
                 return;
             }
             

@@ -120,7 +120,7 @@ namespace Lanayo.Vagrant_Manager {
 
         public void PerformVagrantAction(string action, VagrantInstance instance) {
             if (action == "ssh") {
-                action = String.Format("cd /d {0} && vagrant ssh", Util.EscapeShellArg(instance.Path));
+                action = String.Format("cd /d {0} && vagrant putty", Util.EscapeShellArg(instance.Path));
                 this.RunTerminalCommand(action);
             } else {
                 this.RunVagrantAction(action, instance);
@@ -128,7 +128,7 @@ namespace Lanayo.Vagrant_Manager {
         }
         public void PerformVagrantAction(string action, VagrantMachine machine) {
             if (action == "ssh") {
-                action = String.Format("cd /d {0} && vagrant ssh {1}", Util.EscapeShellArg(machine.Instance.Path), machine.Name);
+                action = String.Format("cd /d {0} && vagrant putty {1}", Util.EscapeShellArg(machine.Instance.Path), machine.Name);
                 this.RunTerminalCommand(action);
             } else {
                 this.RunVagrantAction(action, machine);
@@ -138,17 +138,27 @@ namespace Lanayo.Vagrant_Manager {
             if (Directory.Exists(instance.Path)) {
                 Process.Start(@instance.Path);
             } else {
-                MessageBox.Show("Path not found: " + instance.Path);
+                MessageBox.Show("路径不存在: " + instance.Path);
             }
         }
         public void OpenInstanceInTerminal(VagrantInstance instance) {
             if (Directory.Exists(instance.Path)) {
                 Process p = new Process();
-                p.StartInfo.FileName = "cmd";
-                p.StartInfo.Arguments = String.Format("/K cd /d {0}", instance.Path);
+                if (File.Exists(Properties.Settings.Default.CmderExecutablePath)) {
+                    p.StartInfo.FileName  = Properties.Settings.Default.CmderExecutablePath;
+                    p.StartInfo.Arguments = String.Format("/START {0}", instance.Path);
+                } else {
+                    if (File.Exists("D:\\Cmder\\Cmder.exe")) {
+                        p.StartInfo.FileName  = "D:\\Cmder\\Cmder.exe";
+                        p.StartInfo.Arguments = String.Format("/START {0}", instance.Path);
+                    } else {
+                        p.StartInfo.FileName  = "cmd";
+                        p.StartInfo.Arguments = String.Format("/K cd /d {0}", instance.Path);
+                    }
+                }
                 p.Start();
             } else {
-                MessageBox.Show("Path not found: " + instance.Path);
+                MessageBox.Show("路径不存在: " + instance.Path);
             }
         }
         public void AddBookmarkWithInstance(VagrantInstance instance) {
@@ -333,7 +343,7 @@ namespace Lanayo.Vagrant_Manager {
                 MessageBox.Show("VBoxManage.exe not found at default location.\n\nIf using VirtualBox as your VM provider, you may specify an alternate path now, otherwise you may ignore this message, it will not appear again", "Vagrant Manager", MessageBoxButtons.OK);
 
                 OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Title = "Select VBoxManage.exe";
+                dialog.Title = "选择 VBoxManage.exe";
                 dialog.Filter = "VBoxManage|VBoxManage.exe";
                 if (dialog.ShowDialog() == DialogResult.OK) {
                     DirectoryInfo info = new DirectoryInfo(dialog.FileName);

@@ -53,7 +53,7 @@ namespace Lanayo.Vagrant_Manager.Menu {
 
             _NotifyIcon = new NotifyIcon() {
                 Icon = Icon.FromHandle(Resources.vagrant_logo_off.GetHicon()),
-                Text = "Vagrant Manager",
+                Text = "Vagrant 管理器",
                 ContextMenuStrip = _Menu,
                 Visible = true,
             };
@@ -72,24 +72,24 @@ namespace Lanayo.Vagrant_Manager.Menu {
             _BottomMachineSeparator = new ToolStripSeparator();
             _Menu.Items.Add(_BottomMachineSeparator);
 
-            ToolStripMenuItem allMachinesMenuItem = new ToolStripMenuItem("All Machines");
+            ToolStripMenuItem allMachinesMenuItem = new ToolStripMenuItem("所有虚拟机");
             allMachinesMenuItem.DropDownItems.AddRange(new ToolStripMenuItem[] {
-                new ToolStripMenuItem("Up", Resources.up, AllUpMenuItem_Click),
-                new ToolStripMenuItem("Reload", Resources.reload, AllReloadMenuItem_Click),
-                new ToolStripMenuItem("Suspend", Resources.suspend, AllSuspendMenuItem_Click ),
-                new ToolStripMenuItem("Halt", Resources.halt, AllHaltMenuItem_Click),
-                new ToolStripMenuItem("Provision", Resources.provision, AllProvisionMenuItem_Click),
-                new ToolStripMenuItem("Destroy", Resources.destroy, AllDestroyMenuitem_Click)
+                new ToolStripMenuItem("启动", Resources.up, AllUpMenuItem_Click),
+                new ToolStripMenuItem("重载", Resources.reload, AllReloadMenuItem_Click),
+                new ToolStripMenuItem("暂停", Resources.suspend, AllSuspendMenuItem_Click ),
+                new ToolStripMenuItem("关机", Resources.halt, AllHaltMenuItem_Click),
+                new ToolStripMenuItem("准备", Resources.provision, AllProvisionMenuItem_Click),
+                new ToolStripMenuItem("销毁", Resources.destroy, AllDestroyMenuitem_Click)
             });
             _Menu.Items.Add(allMachinesMenuItem);
-            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("Manage Bookmarks", ManageBookmarksMenuItem_Click));
-            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("Preferences", PreferencesMenuItem_Click));
-            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("About", AboutMenuItem_Click));
+            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("管理书签", ManageBookmarksMenuItem_Click));
+            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("首选项", PreferencesMenuItem_Click));
+            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("关于", AboutMenuItem_Click));
 
-            _CheckForUpdatesMenuItem = Util.MakeBlankToolstripMenuItem("Check For Updates", CheckForUpdatesMenuItem_Click);
-            _Menu.Items.Add(_CheckForUpdatesMenuItem);
+            _CheckForUpdatesMenuItem = Util.MakeBlankToolstripMenuItem("检查更新", CheckForUpdatesMenuItem_Click);
+            // _Menu.Items.Add(_CheckForUpdatesMenuItem);
 
-            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("Exit", ExitMenuItem_Click));
+            _Menu.Items.Add(Util.MakeBlankToolstripMenuItem("退出", ExitMenuItem_Click));
         }
 
         #region Notification event handlers
@@ -215,7 +215,7 @@ namespace Lanayo.Vagrant_Manager.Menu {
             if (_MenuItems.Count > 0) {
                 _Menu.Items.Insert(_Menu.Items.IndexOf(_RefreshMenuItem) + 1, _TopMachineSeparator);
             }
-            
+
         }
 
         private void SetUpdatesAvailable(bool updatesAvailable) {
@@ -224,7 +224,7 @@ namespace Lanayo.Vagrant_Manager.Menu {
 
         private void SetIsRefreshing(bool isRefreshing) {
             _RefreshMenuItem.Enabled = !isRefreshing;
-            _RefreshMenuItem.Text = isRefreshing ? "Refreshing..." : "Refresh";
+            _RefreshMenuItem.Text = isRefreshing ? "刷新中..." : "立即刷新";
 
             if (isRefreshing) {
                 _RefreshIconFrame = 1;
@@ -271,12 +271,21 @@ namespace Lanayo.Vagrant_Manager.Menu {
         public void NativeMenuItemHaltAllMachines(NativeMenuItem menuItem) {
             this.PerformAction("halt", menuItem.Instance);
         }
+
         public void NativeMenuItemDestroyAllMachines(NativeMenuItem menuItem) {
-            DialogResult dialogResult = MessageBox.Show(String.Format("Are you sure you want to destroy {0}?", menuItem.Instance.Machines.Length > 1 ? "all machines in the group" : "this machine"), "Confirm Destructive Action", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(
+                String.Format("你确定你想要销毁 {0}： [{1}] ？", menuItem.Instance.Machines.Length > 1 ? "分组中的所有虚拟机" : "这台虚拟机", menuItem.Instance.DisplayName),
+                "破坏操作提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3);
+
             if (dialogResult == DialogResult.Yes) {
-                this.PerformAction("destroy", menuItem.Instance);
+                DialogResult dialogResult2 = MessageBox.Show("你十分确定你想要执行销毁操作？\n注意：此操作不可逆，请提前备份重要数据！", "毁灭性操作提示",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (dialogResult2 == DialogResult.Yes) {
+                    this.PerformAction("destroy", menuItem.Instance);
+                }
             }
         }
+
         public void NativeMenuItemProvisionAllMachines(NativeMenuItem menuItem) {
             this.PerformAction("provision", menuItem.Instance);
         }

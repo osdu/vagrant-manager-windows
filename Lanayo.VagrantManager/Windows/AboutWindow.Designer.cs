@@ -34,19 +34,19 @@
             this.WebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.WebBrowser.Name = "WebBrowser";
             this.WebBrowser.ScrollBarsEnabled = false;
-            this.WebBrowser.Size = new System.Drawing.Size(430, 183);
+            this.WebBrowser.Size = new System.Drawing.Size(430, 250);
             this.WebBrowser.TabIndex = 0;
             // 
             // AboutWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 183);
+            this.ClientSize = new System.Drawing.Size(430, 250);
             this.Controls.Add(this.WebBrowser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AboutWindow";
-            this.Text = "About Us";
+            this.Text = "关于我们";
             this.Load += new System.EventHandler(this.AboutWindow_Load);
             this.ResumeLayout(false);
 

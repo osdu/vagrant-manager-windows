@@ -76,7 +76,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 15;
-            this.label1.Text = "VBoxManage.exe | Status:";
+            this.label1.Text = "VBoxManage.exe | 状态:";
             // 
             // VirtualBoxBrowseButton
             // 
@@ -85,7 +85,7 @@
             this.VirtualBoxBrowseButton.Name = "VirtualBoxBrowseButton";
             this.VirtualBoxBrowseButton.Size = new System.Drawing.Size(60, 23);
             this.VirtualBoxBrowseButton.TabIndex = 14;
-            this.VirtualBoxBrowseButton.Text = "Browse";
+            this.VirtualBoxBrowseButton.Text = "浏览";
             this.VirtualBoxBrowseButton.UseVisualStyleBackColor = true;
             this.VirtualBoxBrowseButton.Click += new System.EventHandler(this.VirtualBoxBrowseButton_Click);
             // 
@@ -106,7 +106,7 @@
             this.AutoCloseTaskWindowLabel.Name = "AutoCloseTaskWindowLabel";
             this.AutoCloseTaskWindowLabel.Size = new System.Drawing.Size(149, 24);
             this.AutoCloseTaskWindowLabel.TabIndex = 12;
-            this.AutoCloseTaskWindowLabel.Text = "Automatically close the task output\r\nwindow if the task was successful";
+            this.AutoCloseTaskWindowLabel.Text = "如果任务执行成功则自动关闭任务窗口";
             // 
             // IncludeMachineNamesLabel
             // 
@@ -117,7 +117,7 @@
             this.IncludeMachineNamesLabel.Name = "IncludeMachineNamesLabel";
             this.IncludeMachineNamesLabel.Size = new System.Drawing.Size(129, 24);
             this.IncludeMachineNamesLabel.TabIndex = 11;
-            this.IncludeMachineNamesLabel.Text = "Include machine names in top-\r\nlevel menu item labels";
+            this.IncludeMachineNamesLabel.Text = "在顶级菜单标签中包含虚拟机名称";
             // 
             // InstancePathAsDisplayLabel
             // 
@@ -128,7 +128,7 @@
             this.InstancePathAsDisplayLabel.Name = "InstancePathAsDisplayLabel";
             this.InstancePathAsDisplayLabel.Size = new System.Drawing.Size(153, 24);
             this.InstancePathAsDisplayLabel.TabIndex = 10;
-            this.InstancePathAsDisplayLabel.Text = "Use the path to the vagrant instance\r\nfor the menu item label";
+            this.InstancePathAsDisplayLabel.Text = "使用 Vagrant 实例路径作为菜单项标签名";
             // 
             // RefreshEveryComboBox
             // 
@@ -149,7 +149,7 @@
             this.RefreshEveryCheckBox.Name = "RefreshEveryCheckBox";
             this.RefreshEveryCheckBox.Size = new System.Drawing.Size(93, 17);
             this.RefreshEveryCheckBox.TabIndex = 8;
-            this.RefreshEveryCheckBox.Text = "Refresh Every";
+            this.RefreshEveryCheckBox.Text = "刷新间隔";
             this.RefreshEveryCheckBox.UseVisualStyleBackColor = true;
             this.RefreshEveryCheckBox.CheckedChanged += new System.EventHandler(this.RefreshEveryCheckBox_CheckedChanged);
             // 
@@ -161,7 +161,7 @@
             this.AutoCloseTaskWindowCheckBox.Name = "AutoCloseTaskWindowCheckBox";
             this.AutoCloseTaskWindowCheckBox.Size = new System.Drawing.Size(138, 17);
             this.AutoCloseTaskWindowCheckBox.TabIndex = 7;
-            this.AutoCloseTaskWindowCheckBox.Text = "Auto-close task window";
+            this.AutoCloseTaskWindowCheckBox.Text = "自动关闭任务窗口";
             this.AutoCloseTaskWindowCheckBox.UseVisualStyleBackColor = true;
             this.AutoCloseTaskWindowCheckBox.CheckedChanged += new System.EventHandler(this.AutoCloseTaskWindowCheckBox_CheckedChanged);
             // 
@@ -173,7 +173,7 @@
             this.IncludeMachineNamesCheckBox.Name = "IncludeMachineNamesCheckBox";
             this.IncludeMachineNamesCheckBox.Size = new System.Drawing.Size(138, 17);
             this.IncludeMachineNamesCheckBox.TabIndex = 6;
-            this.IncludeMachineNamesCheckBox.Text = "Include machine names";
+            this.IncludeMachineNamesCheckBox.Text = "包含虚拟机名称";
             this.IncludeMachineNamesCheckBox.UseVisualStyleBackColor = true;
             this.IncludeMachineNamesCheckBox.CheckedChanged += new System.EventHandler(this.IncludeMachineNamesCheckBox_CheckedChanged);
             // 
@@ -185,7 +185,7 @@
             this.InstancePathAsDisplayCheckBox.Name = "InstancePathAsDisplayCheckBox";
             this.InstancePathAsDisplayCheckBox.Size = new System.Drawing.Size(190, 17);
             this.InstancePathAsDisplayCheckBox.TabIndex = 5;
-            this.InstancePathAsDisplayCheckBox.Text = "Use instance path as display name";
+            this.InstancePathAsDisplayCheckBox.Text = "使用实例路径作为显示名称";
             this.InstancePathAsDisplayCheckBox.UseVisualStyleBackColor = true;
             this.InstancePathAsDisplayCheckBox.CheckedChanged += new System.EventHandler(this.InstancePathAsDisplayCheckBox_CheckedChanged);
             // 
@@ -197,7 +197,7 @@
             this.UpdateNotificationCheckBox.Name = "UpdateNotificationCheckBox";
             this.UpdateNotificationCheckBox.Size = new System.Drawing.Size(169, 17);
             this.UpdateNotificationCheckBox.TabIndex = 4;
-            this.UpdateNotificationCheckBox.Text = "Don\'t show update notification";
+            this.UpdateNotificationCheckBox.Text = "不显示更新提示信息";
             this.UpdateNotificationCheckBox.UseVisualStyleBackColor = true;
             this.UpdateNotificationCheckBox.CheckedChanged += new System.EventHandler(this.UpdateNotificationCheckBox_CheckedChanged);
             // 
@@ -209,7 +209,7 @@
             this.LaunchAtLoginCheckBox.Name = "LaunchAtLoginCheckBox";
             this.LaunchAtLoginCheckBox.Size = new System.Drawing.Size(99, 17);
             this.LaunchAtLoginCheckBox.TabIndex = 2;
-            this.LaunchAtLoginCheckBox.Text = "Launch at login";
+            this.LaunchAtLoginCheckBox.Text = "系统登录时自启动";
             this.LaunchAtLoginCheckBox.UseVisualStyleBackColor = true;
             this.LaunchAtLoginCheckBox.CheckedChanged += new System.EventHandler(this.LaunchAtLoginCheckBox_CheckedChanged);
             // 
@@ -220,7 +220,7 @@
             this.DoneButton.Name = "DoneButton";
             this.DoneButton.Size = new System.Drawing.Size(75, 23);
             this.DoneButton.TabIndex = 1;
-            this.DoneButton.Text = "Done";
+            this.DoneButton.Text = "确定";
             this.DoneButton.UseVisualStyleBackColor = true;
             this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
             // 
@@ -245,7 +245,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PreferencesWindow";
-            this.Text = "Preferences";
+            this.Text = "首选项";
             this.Load += new System.EventHandler(this.PreferencesWindow_Load);
             this.PreferencesPanel.ResumeLayout(false);
             this.PreferencesPanel.PerformLayout();

@@ -43,7 +43,7 @@ namespace Lanayo.Vagrant_Manager.Menu {
             if (Instance != null) {
 
                 if (_InstanceUpMenuItem == null) {
-                    _InstanceUpMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Up All" : "Up", Resources.up, UpAllMachines_Click);
+                    _InstanceUpMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部启动" : "启动", Resources.up, UpAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceUpMenuItem);
                 }
 
@@ -53,27 +53,27 @@ namespace Lanayo.Vagrant_Manager.Menu {
                 }
 
                 if (_InstanceReloadMenuItem == null) {
-                    _InstanceReloadMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Reload All" : "Reload", Resources.reload, ReloadAllMachines_Click);
+                    _InstanceReloadMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部重载" : "重载", Resources.reload, ReloadAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceReloadMenuItem);
                 }
 
                 if (_InstanceSuspendMenuItem == null) {
-                    _InstanceSuspendMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Suspend All" : "Suspend", Resources.suspend, SuspendAllMachines_Click);
+                    _InstanceSuspendMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部暂停" : "暂停", Resources.suspend, SuspendAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceSuspendMenuItem);
                 }
 
                 if (_InstanceHaltMenuItem == null) {
-                    _InstanceHaltMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Halt All" : "Halt", Resources.halt, HaltAllMachines_Click);
+                    _InstanceHaltMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部关机" : "关机", Resources.halt, HaltAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceHaltMenuItem);
                 }
 
                 if (_InstanceDestroyMenuItem == null) {
-                    _InstanceDestroyMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Destroy All" : "Destroy", Resources.destroy, DestroyAllMachines_Click);
+                    _InstanceDestroyMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部销毁" : "销毁", Resources.destroy, DestroyAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceDestroyMenuItem);
                 }
 
                 if (_InstanceProvisionMenuItem == null) {
-                    _InstanceProvisionMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "Provision All" : "Provision", Resources.provision, ProvisionAllMachines_Click);
+                    _InstanceProvisionMenuItem = new ToolStripMenuItem(Instance.Machines.Length > 1 ? "全部准备" : "准备", Resources.provision, ProvisionAllMachines_Click);
                     MenuItem.DropDownItems.Add(_InstanceProvisionMenuItem);
                 }
 
@@ -83,17 +83,17 @@ namespace Lanayo.Vagrant_Manager.Menu {
                 }
 
                 if (_OpenInExplorerMenuItem == null) {
-                    _OpenInExplorerMenuItem = Util.MakeBlankToolstripMenuItem("Open In Explorer", OpenInExplorerMenuItem_Click);
+                    _OpenInExplorerMenuItem = Util.MakeBlankToolstripMenuItem("在资源管理器中打开", OpenInExplorerMenuItem_Click);
                     MenuItem.DropDownItems.Add(_OpenInExplorerMenuItem);
                 }
 
                 if (_OpenInTerminalMenuItem == null) {
-                    _OpenInTerminalMenuItem = Util.MakeBlankToolstripMenuItem("Open In Terminal", OpenInTerminalMenuItem_Click);
+                    _OpenInTerminalMenuItem = Util.MakeBlankToolstripMenuItem("在终端中打开", OpenInTerminalMenuItem_Click);
                     MenuItem.DropDownItems.Add(_OpenInTerminalMenuItem);
                 }
 
                 if (_ChooseProviderMenuItem == null) {
-                    _ChooseProviderMenuItem = new ToolStripMenuItem(String.Format("Provider: {0}", Instance.ProviderIdentifier ?? "Unknown"));
+                    _ChooseProviderMenuItem = new ToolStripMenuItem(String.Format("供应者: {0}", Instance.ProviderIdentifier ?? "未知"));
                     VagrantManager.Instance.GetProviderIdentifiers().ToList().ForEach(identifier => {
                         ToolStripMenuItem menuItem = Util.MakeBlankToolstripMenuItem(identifier, UpdateProviderIdentifier_Click);
                         menuItem.Tag = identifier;
@@ -101,16 +101,16 @@ namespace Lanayo.Vagrant_Manager.Menu {
                     });
                     MenuItem.DropDownItems.Add(_ChooseProviderMenuItem);
                 } else {
-                    _ChooseProviderMenuItem.Text = String.Format("Provider: {0}", Instance.ProviderIdentifier ?? "Unknown");
+                    _ChooseProviderMenuItem.Text = String.Format("供应者: {0}", Instance.ProviderIdentifier ?? "未知");
                 }
 
                 if (_RemoveBookmarkMenuItem == null) {
-                    _RemoveBookmarkMenuItem = Util.MakeBlankToolstripMenuItem("Remove from bookmarks", RemoveBookmarkMenuItem_Click);
+                    _RemoveBookmarkMenuItem = Util.MakeBlankToolstripMenuItem("删除书签", RemoveBookmarkMenuItem_Click);
                     MenuItem.DropDownItems.Add(_RemoveBookmarkMenuItem);
                 }
 
                 if (_AddBookmarkMenuItem == null) {
-                    _AddBookmarkMenuItem = Util.MakeBlankToolstripMenuItem("Add to bookmarks", AddBookmarkMenuItem_Click);
+                    _AddBookmarkMenuItem = Util.MakeBlankToolstripMenuItem("添加书签", AddBookmarkMenuItem_Click);
                     MenuItem.DropDownItems.Add(_AddBookmarkMenuItem);
                 }
 
@@ -195,13 +195,13 @@ namespace Lanayo.Vagrant_Manager.Menu {
                     Array.ForEach(Instance.Machines, machine => {
                         ToolStripMenuItem machineItem = new ToolStripMenuItem(machine.Name);
 
-                        ToolStripMenuItem machineUpMenuItem = new ToolStripMenuItem("Up", Resources.up, UpMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineUpMenuItem = new ToolStripMenuItem("启动", Resources.up, UpMachine_Click) { Tag = machine };
                         ToolStripMenuItem machineSSHMenuItem = new ToolStripMenuItem("SSH", Resources.ssh, SSHMachine_Click) { Tag = machine };
-                        ToolStripMenuItem machineReloadMenuItem = new ToolStripMenuItem("Reload", Resources.reload, ReloadMachine_Click) { Tag = machine };
-                        ToolStripMenuItem machineSuspendMenuItem = new ToolStripMenuItem("Suspend", Resources.suspend, SuspendMachine_Click) { Tag = machine };
-                        ToolStripMenuItem machineHaltMenuItem = new ToolStripMenuItem("Halt", Resources.halt, HaltMachine_Click) { Tag = machine };
-                        ToolStripMenuItem machineDestroyMenuItem = new ToolStripMenuItem("Destroy", Resources.destroy, DestroyMachine_Click) { Tag = machine };
-                        ToolStripMenuItem machineProvisionMenuItem = new ToolStripMenuItem("Provision", Resources.provision, ProvisionMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineReloadMenuItem = new ToolStripMenuItem("重载", Resources.reload, ReloadMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineSuspendMenuItem = new ToolStripMenuItem("暂停", Resources.suspend, SuspendMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineHaltMenuItem = new ToolStripMenuItem("关机", Resources.halt, HaltMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineDestroyMenuItem = new ToolStripMenuItem("销毁", Resources.destroy, DestroyMachine_Click) { Tag = machine };
+                        ToolStripMenuItem machineProvisionMenuItem = new ToolStripMenuItem("准备", Resources.provision, ProvisionMachine_Click) { Tag = machine };
 
                         machineItem.DropDownItems.AddRange(new ToolStripMenuItem[] {
                             machineUpMenuItem,

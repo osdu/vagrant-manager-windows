@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 namespace Lanayo.Vagrant_Manager.Properties {
-    
-    
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
+
         public static Settings Default {
             get {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
@@ -34,7 +34,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["Bookmarks"] = value;
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/lanayotech/vagrant-manager-windows")]
@@ -43,7 +43,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 return ((string)(this["GithubUrl"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://api.lanayo.com/info/vagrant_manager_windows")]
@@ -52,7 +52,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 return ((string)(this["AppInfoUrl"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://www.vagrantmanager.com/windows")]
@@ -61,7 +61,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 return ((string)(this["AboutUrl"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://api.lanayo.com/appcast/vagrant_manager_windows.xml")]
@@ -70,7 +70,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 return ((string)(this["AppcastUrl"]));
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -82,7 +82,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["UsePathAsInstanceDisplayName"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -94,7 +94,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["IncludeMachineNamesInMenu"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -106,7 +106,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["AutoCloseTaskWindows"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -118,7 +118,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["LaunchAtLogin"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -130,7 +130,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["ShowUpdateNotification"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -142,7 +142,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["RefreshEvery"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Stable")]
@@ -154,7 +154,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["AllowedUpdates"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
@@ -166,7 +166,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["RefreshEveryInterval"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
@@ -178,7 +178,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["RecursiveBookmarkScan"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
@@ -190,7 +190,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["Guid"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("c:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe")]
@@ -202,7 +202,7 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["VBoxManagePath"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -214,5 +214,18 @@ namespace Lanayo.Vagrant_Manager.Properties {
                 this["VBoxManagePathPrompted"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Cmder\\Cmder.exe")]
+        public string CmderExecutablePath {
+            get {
+                return ((string)(this["CmderExecutablePath"]));
+            }
+            set {
+                this["CmderExecutablePath"] = value;
+            }
+        }
+
     }
 }

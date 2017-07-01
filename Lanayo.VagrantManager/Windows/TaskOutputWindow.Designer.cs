@@ -39,7 +39,7 @@
             this.TaskStatusLabel.Name = "TaskStatusLabel";
             this.TaskStatusLabel.Size = new System.Drawing.Size(83, 13);
             this.TaskStatusLabel.TabIndex = 0;
-            this.TaskStatusLabel.Text = "Running Task...";
+            this.TaskStatusLabel.Text = "运行任务...";
             // 
             // TaskProgressBar
             // 
@@ -74,7 +74,7 @@
             this.CloseWindowButton.Name = "CloseWindowButton";
             this.CloseWindowButton.Size = new System.Drawing.Size(120, 23);
             this.CloseWindowButton.TabIndex = 4;
-            this.CloseWindowButton.Text = "Close Window";
+            this.CloseWindowButton.Text = "关闭窗口";
             this.CloseWindowButton.UseVisualStyleBackColor = true;
             this.CloseWindowButton.Click += new System.EventHandler(this.CloseWindowButton_Click);
             // 

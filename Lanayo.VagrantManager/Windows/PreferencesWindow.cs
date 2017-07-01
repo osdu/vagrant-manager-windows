@@ -21,13 +21,13 @@ namespace Lanayo.Vagrant_Manager.Windows {
 
         private void PreferencesWindow_Load(object sender, EventArgs e) {
             RefreshItems = new ComboBoxItem[] {
-                new ComboBoxItem() { Text = "5 seconds", Value = 5 },
-                new ComboBoxItem() { Text = "15 seconds", Value = 15 },
-                new ComboBoxItem() { Text = "30 seconds", Value = 30 },
-                new ComboBoxItem() { Text = "1 minute", Value = 60 },
-                new ComboBoxItem() { Text = "15 minutes", Value = 900 },
-                new ComboBoxItem() { Text = "30 minutes", Value = 1800 },
-                new ComboBoxItem() { Text = "1 hour", Value = 3600 }
+                new ComboBoxItem() { Text = "5 秒钟", Value = 5 },
+                new ComboBoxItem() { Text = "15 秒钟", Value = 15 },
+                new ComboBoxItem() { Text = "30 秒钟", Value = 30 },
+                new ComboBoxItem() { Text = "1 分钟", Value = 60 },
+                new ComboBoxItem() { Text = "15 分钟", Value = 900 },
+                new ComboBoxItem() { Text = "30 分钟", Value = 1800 },
+                new ComboBoxItem() { Text = "1 小时", Value = 3600 }
             };
 
             RefreshEveryComboBox.Items.AddRange(RefreshItems);
@@ -49,10 +49,10 @@ namespace Lanayo.Vagrant_Manager.Windows {
             Properties.Settings.Default.Save();
             
             if (File.Exists(VirtualBoxPathTextBox.Text)) {
-                VirtualBoxPathStatusTextBox.Text = "Linked";
+                VirtualBoxPathStatusTextBox.Text = "已连接";
                 VirtualBoxPathStatusTextBox.ForeColor = Color.DarkGreen;
             } else {
-                VirtualBoxPathStatusTextBox.Text = "Unlinked";
+                VirtualBoxPathStatusTextBox.Text = "未连接";
                 VirtualBoxPathStatusTextBox.ForeColor = Color.DarkRed;
             }
         }
@@ -116,7 +116,7 @@ namespace Lanayo.Vagrant_Manager.Windows {
 
         private void VirtualBoxBrowseButton_Click(object sender, EventArgs e) {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Title = "Select VBoxManage.exe";
+            dialog.Title = "选择 VBoxManage.exe";
             dialog.Filter = "VBoxManage|VBoxManage.exe";
             if (dialog.ShowDialog() == DialogResult.OK) {
                 DirectoryInfo info = new DirectoryInfo(dialog.FileName);

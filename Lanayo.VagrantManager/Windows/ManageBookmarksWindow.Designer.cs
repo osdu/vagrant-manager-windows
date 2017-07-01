@@ -114,7 +114,7 @@
             this.SaveBookmarksButton.Name = "SaveBookmarksButton";
             this.SaveBookmarksButton.Size = new System.Drawing.Size(75, 23);
             this.SaveBookmarksButton.TabIndex = 3;
-            this.SaveBookmarksButton.Text = "Save";
+            this.SaveBookmarksButton.Text = "保存";
             this.SaveBookmarksButton.UseVisualStyleBackColor = true;
             this.SaveBookmarksButton.Click += new System.EventHandler(this.SaveBookmarksButton_Click);
             // 
@@ -125,7 +125,7 @@
             this.CancelBookmarksButton.Name = "CancelBookmarksButton";
             this.CancelBookmarksButton.Size = new System.Drawing.Size(75, 23);
             this.CancelBookmarksButton.TabIndex = 4;
-            this.CancelBookmarksButton.Text = "Cancel";
+            this.CancelBookmarksButton.Text = "取消";
             this.CancelBookmarksButton.UseVisualStyleBackColor = true;
             this.CancelBookmarksButton.Click += new System.EventHandler(this.CancelBookmarksButton_Click);
             // 
@@ -136,7 +136,7 @@
             this.RecursiveScanCheckbox.Name = "RecursiveScanCheckbox";
             this.RecursiveScanCheckbox.Size = new System.Drawing.Size(220, 17);
             this.RecursiveScanCheckbox.TabIndex = 5;
-            this.RecursiveScanCheckbox.Text = "Recursively scan directories when added";
+            this.RecursiveScanCheckbox.Text = "添加时递归扫描目录";
             this.RecursiveScanCheckbox.UseVisualStyleBackColor = true;
             this.RecursiveScanCheckbox.CheckedChanged += new System.EventHandler(this.RecursiveScanCheckbox_CheckedChanged);
             // 
@@ -148,7 +148,7 @@
             this.DisplayNameNoteLabel.Name = "DisplayNameNoteLabel";
             this.DisplayNameNoteLabel.Size = new System.Drawing.Size(151, 13);
             this.DisplayNameNoteLabel.TabIndex = 7;
-            this.DisplayNameNoteLabel.Text = "Note: Display Name is editable";
+            this.DisplayNameNoteLabel.Text = "注意: 显示名称是可编辑的";
             // 
             // DirectoryLabelTextField
             // 
@@ -170,7 +170,7 @@
             this.CancelScanButton.Name = "CancelScanButton";
             this.CancelScanButton.Size = new System.Drawing.Size(88, 23);
             this.CancelScanButton.TabIndex = 9;
-            this.CancelScanButton.Text = "Cancel Scan";
+            this.CancelScanButton.Text = "取消扫描";
             this.CancelScanButton.UseVisualStyleBackColor = true;
             this.CancelScanButton.Visible = false;
             this.CancelScanButton.Click += new System.EventHandler(this.CancelScanButton_Click);
@@ -192,7 +192,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(495, 435);
             this.Name = "ManageBookmarksWindow";
-            this.Text = "Manage Bookmarks";
+            this.Text = "管理书签";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookmarksWindow_FormClosing);
             this.Load += new System.EventHandler(this.ManageBookmarksWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BookmarksDataGridView)).EndInit();
